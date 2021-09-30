@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="rich_black">#36454F</color>
+    <color name="carmine">#960018</color>
+    <color name="scarlet">#FF2400</color>
+    <color name="amber">#FFBF00</color>
+    <color name="cherry">#990F02</color>
 </resources>
