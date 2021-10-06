@@ -19,14 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val response = repository.getMenuItems("https://www.dnd5eapi.co/api/")
-            val response2 = repository.getClasses("https://www.dnd5eapi.co/api")
             if (response.isSuccessful) {
                 Log.i("menu", "menu is ${response.body()}")
-            }
-            if (response2.isSuccessful) {
-                Log.i("classes", "classes are ${response2.body()}")
-            } else {
-                Log.i("classes", "classes are failed to get classes")
             }
         }
     }
