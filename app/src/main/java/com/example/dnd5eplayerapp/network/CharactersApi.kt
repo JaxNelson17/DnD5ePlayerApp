@@ -1,12 +1,11 @@
 package com.example.dnd5eplayerapp.network
 
 import com.example.dnd5eplayerapp.database.Character
+import com.example.dnd5eplayerapp.database.Result
 import com.example.dnd5eplayerapp.database.itemResponse
-import com.example.dnd5eplayerapp.database.responseMenu
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
-import retrofit2.http.Url
 
 interface CharactersApi {
 
@@ -18,5 +17,5 @@ interface CharactersApi {
         @Query("count") count: String,
         @Query("result") result: String
     ) : Response<itemResponse>
-
+    
 }

@@ -1,6 +1,7 @@
 package com.example.dnd5eplayerapp
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.myCustomData.observe(this, Observer { response ->
             if(response.isSuccessful){
                 response.body()?.let { myAdapter.setData(it) }
+                Log.i("response", "the response is ${response}")
             }else {
                 Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
             }
