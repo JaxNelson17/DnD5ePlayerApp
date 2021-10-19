@@ -1,38 +1,36 @@
 package com.example.dnd5eplayerapp.ui.home
 
-import android.app.ActionBar
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.HorizontalScrollView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dnd5eplayerapp.databinding.HomeRecyclerviewItemBinding
-import java.text.FieldPosition
+import com.example.dnd5eplayerapp.R
+import com.example.dnd5eplayerapp.database.itemResponse
+import com.example.dnd5eplayerapp.database.responseMenu
+import kotlinx.android.synthetic.main.home_recyclerview_item.view.*
 
-class HomeAdapter(
-    ) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ) : HomeAdapter.HomeViewHolder {
-        val view = HomeRecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return HomeViewHolder(view)
-    }
+class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
 
-    override fun onBindViewHolder(
-        holder: HomeAdapter.HomeViewHolder,
-        position: Int
-    ) {
-        holder.bind(position)
-    }
+    private var myList = emptyList<itemResponse>()
 
-    inner class HomeViewHolder(val binding: HomeRecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(position: Int) {
+    inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
-        }
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.MyViewHolder {
+        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.home_recyclerview_item, parent, false))
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return myList.size
     }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.itemView.count_txt.text = myList[position].count.toString()
+        holder.itemView.results_txt.text = myList[position].results.toString()
+    }
+
+    fun setData(newList: itemResponse) {
+        myList = listOf(newList)
+        notifyDataSetChanged()
+    }
+
 }
