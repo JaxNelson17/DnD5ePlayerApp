@@ -17,5 +17,5 @@ interface CharactersApi {
         @Query("count") count: String,
         @Query("result") result: String
     ) : Response<itemResponse>
-    
+
 }
