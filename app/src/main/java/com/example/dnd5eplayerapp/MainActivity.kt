@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = HomeViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
-        viewModel.getCustomData("","")
+        viewModel.getCustomData("5","")
         viewModel.myCustomData.observe(this, Observer { response ->
             if(response.isSuccessful){
                 response.body()?.let { myAdapter.setData(it) }

@@ -1,22 +1,15 @@
 package com.example.dnd5eplayerapp.ui.home
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dnd5eplayerapp.R
-import com.example.dnd5eplayerapp.database.Result
 import com.example.dnd5eplayerapp.database.itemResponse
 import kotlinx.android.synthetic.main.home_recyclerview_item.view.*
 
 
 class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
-
-    companion object {
-        const val TAG = "HomeAdapter"
-    }
-
 
     private var myList = emptyList<itemResponse>()
 
@@ -32,8 +25,8 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.count_txt.text = myList[position].results.first().url
-        Log.i(TAG, "${myList}")
-        holder.itemView.results_txt.text = myList[0].results.toString()
+        holder.itemView.results_txt.text = myList[position].results.first().name
+        holder.itemView.url_txt.text = myList[position].results.toString()
     }
 
     fun setData(newList: itemResponse) {

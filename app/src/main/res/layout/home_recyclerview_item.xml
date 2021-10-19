@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:text="TextView"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +23,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/count_txt"
         app:layout_constraintTop_toBottomOf="@+id/count_txt" />
+
+    <TextView
+        android:id="@+id/url_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/results_txt"
+        app:layout_constraintTop_toBottomOf="@+id/results_txt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
