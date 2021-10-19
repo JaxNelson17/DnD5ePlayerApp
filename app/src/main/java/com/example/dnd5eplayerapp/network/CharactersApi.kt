@@ -12,7 +12,7 @@ interface CharactersApi {
     @GET("classes")
     suspend fun getCharacters(): Response<List<Character>>
 
-    @GET("api/weapon-properties")
+    @GET("api/equipment-categories")
     suspend fun getMenuItems(
         @Query("count") count: String,
         @Query("result") result: String

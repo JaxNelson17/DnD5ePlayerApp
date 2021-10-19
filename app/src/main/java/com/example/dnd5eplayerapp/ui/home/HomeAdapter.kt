@@ -24,8 +24,8 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.itemView.count_txt.text = myList[position].results.first().url
-        holder.itemView.results_txt.text = myList[position].results.first().name
+        holder.itemView.count_txt.text = myList[position].results[position].url
+        holder.itemView.results_txt.text = myList[position].results[position].name
         holder.itemView.url_txt.text = myList[position].results.toString()
     }
 
