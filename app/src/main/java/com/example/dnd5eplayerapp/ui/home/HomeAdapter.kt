@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dnd5eplayerapp.R
+import com.example.dnd5eplayerapp.database.Result
 import com.example.dnd5eplayerapp.database.itemResponse
 import com.example.dnd5eplayerapp.database.responseMenu
 import kotlinx.android.synthetic.main.home_recyclerview_item.view.*
