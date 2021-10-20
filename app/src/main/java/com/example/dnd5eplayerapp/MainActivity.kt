@@ -1,13 +1,10 @@
 package com.example.dnd5eplayerapp
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.dnd5eplayerapp.databinding.HomeFragmentBinding
 import com.example.dnd5eplayerapp.repository.Repository
 import com.example.dnd5eplayerapp.ui.home.HomeAdapter
 import com.example.dnd5eplayerapp.ui.home.HomeViewModel
@@ -30,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
         viewModel.getCustomData("","")
         viewModel.myCustomData.observe(this, Observer { response ->
+            response = gson
                     myAdapter.submitList(response)
 
         })
