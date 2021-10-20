@@ -1,7 +1,7 @@
 package com.example.dnd5eplayerapp.database
 
 
-data class itemResponse (
+data class ItemResponse (
     val count: Long,
     val results: List<Result>
 )

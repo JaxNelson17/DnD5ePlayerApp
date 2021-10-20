@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.dnd5eplayerapp.databinding.HomeFragmentBinding
 import com.example.dnd5eplayerapp.repository.Repository
 import com.example.dnd5eplayerapp.ui.home.HomeAdapter
 import com.example.dnd5eplayerapp.ui.home.HomeViewModel
@@ -27,13 +28,17 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = HomeViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
-        viewModel.getCustomData("5","")
+        viewModel.getCustomData("","")
+
+
         viewModel.myCustomData.observe(this, Observer { response ->
-            if(response.isSuccessful){
-                response.body()?.let { myAdapter.setData(it) }
+            if(response[0].isSuccessful){
+                response[0].body()?.let { data ->
+                    val listToSubmit = listOf(data)
+                    myAdapter.submitList(listToSubmit) }
                 Log.i("response", "the response is ${response}")
             }else {
-                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+               // Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
             }
         })
 
