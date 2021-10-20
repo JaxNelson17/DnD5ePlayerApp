@@ -1,5 +1,6 @@
 package com.example.dnd5eplayerapp.ui.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,8 +25,9 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.itemView.count_txt.text = myList[position].results[position].url
+        holder.itemView.count_txt.text = myList[position].results[200].url
         holder.itemView.results_txt.text = myList[position].results[position].name
+        Log.i("Position", " ${position}, ${myList}")
         holder.itemView.url_txt.text = myList[position].results.toString()
     }
 
