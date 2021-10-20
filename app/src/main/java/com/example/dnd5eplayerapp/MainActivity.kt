@@ -29,17 +29,9 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = HomeViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
         viewModel.getCustomData("","")
-
-
         viewModel.myCustomData.observe(this, Observer { response ->
-            if(response[0].isSuccessful){
-                response[0].body()?.let { data ->
-                    val listToSubmit = listOf(data)
-                    myAdapter.submitList(listToSubmit) }
-                Log.i("response", "the response is ${response}")
-            }else {
-               // Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-            }
+                    myAdapter.submitList(response)
+
         })
 
     }
