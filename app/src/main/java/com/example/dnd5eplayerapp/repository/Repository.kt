@@ -1,7 +1,8 @@
 package com.example.dnd5eplayerapp.repository
 
 import com.example.dnd5eplayerapp.database.Character
-import com.example.dnd5eplayerapp.database.responseMenu
+import com.example.dnd5eplayerapp.database.ItemResponse
+import com.example.dnd5eplayerapp.database.Monster
 import com.example.dnd5eplayerapp.network.RetroFitInstance
 import retrofit2.Response
 
@@ -11,7 +12,7 @@ class Repository {
         return RetroFitInstance.api.getCharacters()
     }
 
-    suspend fun getMenuItems(menu: String) : Response<responseMenu> {
-        return RetroFitInstance.api.getMenu(menu)
+    suspend fun getMenuItems(results: String) : Response<ItemResponse> {
+        return RetroFitInstance.api.getMenuItems(results)
     }
 }
