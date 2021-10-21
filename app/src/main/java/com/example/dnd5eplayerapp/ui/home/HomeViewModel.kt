@@ -1,13 +1,13 @@
 package com.example.dnd5eplayerapp.ui.home
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.util.Log
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.dnd5eplayerapp.database.ItemResponse
 import com.example.dnd5eplayerapp.database.Monster
 import com.example.dnd5eplayerapp.repository.Repository
 import kotlinx.coroutines.launch
-import retrofit2.Response
 
 class HomeViewModel(private val repository: Repository): ViewModel() {
 
@@ -22,12 +22,16 @@ class HomeViewModel(private val repository: Repository): ViewModel() {
 
 
 
-    fun getCustomData(count: String, result: String) {
+    fun getCustomData(result: String) {
         viewModelScope.launch {
-            val response = repository.getMenuItems(count, result)
-            listOf(response).map { response ->
-                var listOfResults = response.body()?.results
-                _myCustomData.value = listOfResults!! }
+            val response = repository.getMenuItems(result)
+            if (response.isSuccessful) {
+                val monsters = response.body()?.results
+                _myCustomData.value = monsters!!
+            }
+//            listOf(response).map { response ->
+//                var listOfResults = response.body()
+//                _myCustomData.value = listOfResults!! }
         }
     }
 

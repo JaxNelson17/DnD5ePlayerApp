@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = HomeViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
-        viewModel.getCustomData("","")
+        viewModel.getCustomData("")
+
+
         viewModel.myCustomData.observe(this, Observer { response ->
                     myAdapter.submitList(response)
 
