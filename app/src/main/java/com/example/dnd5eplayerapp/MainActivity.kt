@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
         viewModel.getCustomData("","")
         viewModel.myCustomData.observe(this, Observer { response ->
-            response = gson
                     myAdapter.submitList(response)
 
         })
