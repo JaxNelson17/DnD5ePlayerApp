@@ -11,8 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.databinding.HomeFragmentBinding
 import com.example.dnd5eplayerapp.repository.Repository
+import kotlinx.coroutines.CoroutineScope
 
-class HomeFragment() : Fragment() {
+class HomeFragment() : Fragment()  {
 
     private lateinit var homeViewModel: HomeViewModel
     private val myAdapter by lazy { HomeAdapter() }

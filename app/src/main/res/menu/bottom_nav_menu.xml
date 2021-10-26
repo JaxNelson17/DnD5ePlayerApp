@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@id/navigation_home"
+        android:id="@+id/home_fragment"
         android:icon="@drawable/home"
         app:cnb_iconColor="@color/myWhite"
         android:title="Home" />
 
     <item
-        android:id="@id/navigation_home"
+        android:id="@+id/mainMenu_fragment"
         android:icon="@drawable/character_icon"
         app:cnb_iconColor="@color/myWhite"
         android:title="Character List" />
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/about_fragment"
         android:icon="@drawable/info"
         app:cnb_iconColor="@color/myWhite"
         android:title="About"/>

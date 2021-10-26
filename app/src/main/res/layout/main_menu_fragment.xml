@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/my_gradient_drawable"
-    tools:context="HomeFragment">
+    tools:context="MainMenuFragment">
 
     <data>
         <variable
