@@ -7,8 +7,8 @@
 
     <data>
         <variable
-            name="homeViewModel"
-            type="com.example.dnd5eplayerapp.ui.home.HomeViewModel" />
+            name="mainMenuViewModel"
+            type="com.example.dnd5eplayerapp.ui.mainMenu.MenuMenuViewModel" />
 
     </data>
 
@@ -17,7 +17,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/mainMenuView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="50dp"
@@ -29,7 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/home_recyclerview_item"
+            tools:listitem="@layout/main_menu_item"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:text="TextView"
+        android:textColor="@color/myGold"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textColor="@color/myGold"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/count_txt"
         app:layout_constraintTop_toBottomOf="@+id/count_txt" />
@@ -40,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textColor="@color/myGold"
         app:layout_constraintStart_toStartOf="@+id/results_txt"
         app:layout_constraintTop_toBottomOf="@+id/results_txt" />
 

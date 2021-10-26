@@ -13,4 +13,13 @@
     <color name="scarlet">#FF2400</color>
     <color name="amber">#FFBF00</color>
     <color name="cherry">#990F02</color>
+
+    <color name="myRed">#973033</color>
+    <color name="myLightBlue">#393AA0</color>
+    <color name="myDarkBlue">#090D3D</color>
+    <color name="myGold">#EAC478</color>
+    <color name="myWhite">#F2F2F2</color>
+    <color name="transparent">#00ff0000</color>
+
+
 </resources>
