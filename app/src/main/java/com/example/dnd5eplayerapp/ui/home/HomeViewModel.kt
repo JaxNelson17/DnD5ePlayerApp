@@ -20,8 +20,6 @@ class HomeViewModel(private val repository: Repository): ViewModel() {
         get() = _myCustomData
 
 
-
-
     fun getCustomData(result: String) {
         viewModelScope.launch {
             val response = repository.getMenuItems(result)
@@ -29,9 +27,6 @@ class HomeViewModel(private val repository: Repository): ViewModel() {
                 val monsters = response.body()?.results
                 _myCustomData.value = monsters!!
             }
-//            listOf(response).map { response ->
-//                var listOfResults = response.body()
-//                _myCustomData.value = listOfResults!! }
         }
     }
 

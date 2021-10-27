@@ -1,31 +1,50 @@
 package com.example.dnd5eplayerapp.ui.mainMenu
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dnd5eplayerapp.R
-import com.example.dnd5eplayerapp.database.Monster
+import com.example.dnd5eplayerapp.database.MenuItem
 import com.example.dnd5eplayerapp.databinding.MainMenuItemBinding
 
-class MainMenuAdapter : RecyclerView.Adapter<MainMenuAdapter.MainMenuViewHolder>() {
+class MainMenuAdapter(val viewModel: MainMenuViewModel) : ListAdapter <MenuItem, MainMenuAdapter.MenuViewHolder>(MenuListDiffCallback()) {
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.main_menu_item, parent, false)
-        return MainMenuViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuAdapter.MenuViewHolder {
+        val view =
+            MainMenuItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MenuViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MainMenuViewHolder, position: Int) {
-
+    override fun onBindViewHolder(holder: MainMenuAdapter.MenuViewHolder, position: Int) {
+        holder.bind(position)
     }
 
-    override fun getItemCount(): Int {
-        return 3
-    }
+    inner class MenuViewHolder(val binding: MainMenuItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(position: Int) {
+           val item = getItem(position)
 
-    inner class MainMenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            binding.mainMenuItem.setOnClickListener {
+                viewModel.setMenuItem(item)
+            }
 
+            var imageView = binding.iconView
+            var textView = binding.textView
+
+            imageView.setImageResource(item.image)
+            textView.text = item.name
+        }
     }
 }
+class MenuListDiffCallback : DiffUtil.ItemCallback<MenuItem>() {
+    override fun areItemsTheSame(oldItem: MenuItem, newItem: MenuItem): Boolean {
+        return oldItem == newItem
+    }
+
+    override fun areContentsTheSame(oldItem: MenuItem, newItem: MenuItem): Boolean {
+        return oldItem == newItem
+    }
+
+}
+

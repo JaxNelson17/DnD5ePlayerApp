@@ -1,5 +1,7 @@
 package com.example.dnd5eplayerapp.database
 
+import android.widget.ImageView
+
 
 data class ItemResponse (
     val count: Long,
@@ -11,6 +13,11 @@ data class Monster (
     val name: String,
     val url: String
 )
+
+data class MenuItem (
+    val image: Int,
+    val name: String
+    )
 
 
 

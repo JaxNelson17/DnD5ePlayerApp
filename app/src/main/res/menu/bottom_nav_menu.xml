@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <item
         android:id="@+id/home_fragment"
         android:icon="@drawable/home"
@@ -9,14 +8,15 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/mainMenu_fragment"
+        android:id="@+id/mainMenuFragment"
         android:icon="@drawable/character_icon"
         app:cnb_iconColor="@color/myWhite"
-        android:title="Character List" />
+        android:title="Character" />
 
     <item
-        android:id="@+id/about_fragment"
+        android:id="@id/mainMenuFragment"
         android:icon="@drawable/info"
         app:cnb_iconColor="@color/myWhite"
-        android:title="About"/>
+        android:title="Info"/>
+
 </menu>

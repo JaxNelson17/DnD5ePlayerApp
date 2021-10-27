@@ -12,7 +12,7 @@ interface CharactersApi {
     @GET("classes")
     suspend fun getCharacters(): Response<List<Character>>
 
-    @GET("api/classes")
+    @GET("api/ability-scores")
     suspend fun getMenuItems(
         @Query("results") results: String
     ) : Response<ItemResponse>
