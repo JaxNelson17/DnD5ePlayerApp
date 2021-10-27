@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
-        android:id="@+id/home_fragment"
+        android:id="@+id/navigation_home"
         android:icon="@drawable/home"
-        app:cnb_iconColor="@color/myWhite"
-        android:title="Home" />
+        android:title="Home"
+        app:cnb_iconColor="@color/myGold"
+        />
 
     <item
-        android:id="@+id/mainMenuFragment"
+        android:id="@+id/navigation_menu"
         android:icon="@drawable/character_icon"
-        app:cnb_iconColor="@color/myWhite"
-        android:title="Character" />
+        android:title="Character"
+        app:cnb_iconColor="@color/myGold"
+        />
 
     <item
-        android:id="@id/mainMenuFragment"
+        android:id="@+id/navigation_info"
         android:icon="@drawable/info"
-        app:cnb_iconColor="@color/myWhite"
-        android:title="Info"/>
+        android:title="Info"
+        app:cnb_iconColor="@color/myGold"/>
+
+
 
 </menu>
