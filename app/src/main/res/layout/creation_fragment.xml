@@ -19,7 +19,7 @@
             android:id="@+id/main_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to the Character Creation Screen!!"
+            android:text="Place"
             android:textAlignment="center"
             android:textColor="@color/myGold"
             app:layout_constraintBottom_toBottomOf="parent"
