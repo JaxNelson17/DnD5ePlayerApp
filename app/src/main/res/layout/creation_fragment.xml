@@ -5,6 +5,9 @@
     android:background="@drawable/my_gradient_drawable">
 
     <data>
+        <variable
+            name="creationViewModel"
+            type="com.example.dnd5eplayerapp.ui.characterCreation.CreationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,13 +16,40 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/main_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to the Character Creation Screen!!"
+            android:textAlignment="center"
+            android:textColor="@color/myGold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.073" />
+
+        <TextView
+            android:id="@+id/under_main_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Place Holder"
+            android:text="Click on the button below to begin."
+            android:textAlignment="center"
+            android:textColor="@color/myGold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_textView" />
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textColor="@color/myGold"
+            android:background="@color/myDarkBlue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/under_main_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

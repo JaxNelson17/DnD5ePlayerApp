@@ -41,14 +41,9 @@ class MainMenuFragment() : Fragment() {
 
         binding.mainMenuViewModel = viewModel
 
-        binding.button.setOnClickListener {
-            navigateToFragment()
-        }
-
         viewModel.menuItemsList.observe(viewLifecycleOwner, Observer { item ->
             navigateToFragment()
         })
-
 
         binding.mainMenuView.adapter = adapter
 

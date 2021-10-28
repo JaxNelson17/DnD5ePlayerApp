@@ -53,7 +53,7 @@ class MainMenuViewModel(
 
 object MainMenuItems {
     val listOfItems = mutableListOf<MenuItem>(
-        MenuItem(R.drawable.list, "Character Creation"),
-        MenuItem(R.drawable.character_icon, "Character List")
+        MenuItem(1 ,R.drawable.list, "Character Creation"),
+        MenuItem( 2,R.drawable.character_icon, "Character List")
     )
 }

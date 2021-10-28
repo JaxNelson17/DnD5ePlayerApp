@@ -17,7 +17,7 @@
         />
 
     <item
-        android:id="@+id/info"
+        android:id="@+id/creationFragment"
         android:icon="@drawable/info"
         android:title="Info"
         app:cnb_iconColor="@color/myGold"/>

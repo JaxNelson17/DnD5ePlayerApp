@@ -18,6 +18,7 @@ data class Monster (
 
 @Parcelize
 data class MenuItem (
+    val id: Int,
     val image: Int,
     val name: String
     ) : Parcelable
