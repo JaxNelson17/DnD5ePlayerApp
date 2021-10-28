@@ -1,6 +1,8 @@
 package com.example.dnd5eplayerapp.database
 
+import android.os.Parcelable
 import android.widget.ImageView
+import kotlinx.android.parcel.Parcelize
 
 
 data class ItemResponse (
@@ -14,10 +16,11 @@ data class Monster (
     val url: String
 )
 
+@Parcelize
 data class MenuItem (
     val image: Int,
     val name: String
-    )
+    ) : Parcelable
 
 
 

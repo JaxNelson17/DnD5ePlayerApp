@@ -3,6 +3,7 @@ package com.example.dnd5eplayerapp
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.dnd5eplayerapp.ui.characterCreation.CreationFragment
 import com.example.dnd5eplayerapp.ui.home.HomeFragment
 import com.example.dnd5eplayerapp.ui.mainMenu.MainMenuFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,13 +15,15 @@ class MainActivity : AppCompatActivity() {
 
         val home = HomeFragment()
         val menu = MainMenuFragment()
+        val info = CreationFragment()
 
-        makeCurrentFragment(menu)
+        makeCurrentFragment(home)
 
         bottom_nav_bar.setOnItemSelectedListener {
             when (it) {
-                R.id.navigation_home -> makeCurrentFragment(menu)
-                R.id.navigation_menu -> makeCurrentFragment(home)
+                R.id.homeFragment -> makeCurrentFragment(home)
+                R.id.menuFragment -> makeCurrentFragment(menu)
+                R.id.creationFragment -> makeCurrentFragment(info)
             }
         }
 

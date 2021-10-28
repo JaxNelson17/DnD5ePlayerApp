@@ -19,17 +19,34 @@ class MainMenuViewModel(
     val listOfMenuItems : LiveData<List<MenuItem>>
         get() = _listOfMenuItems
 
+    private val _selectedItem = MutableLiveData<MenuItem?>()
+    val selectedItem: LiveData<MenuItem?>
+        get() = _selectedItem
+
+    private val _itemNumber = MutableLiveData<Int>()
+    val itemNumber: LiveData<Int>
+        get() = _itemNumber
+
     init {
-        setMenuItems(MainMenuItems.listOfItems)
+        _selectedItem.value = null
+    }
+
+
+    fun navigationComplete() {
+        _selectedItem.value = null
     }
 
     fun setMenuItem(menuItems: MenuItem) {
         _menuItemsList.value =menuItems
     }
 
-
     fun setMenuItems(menuItems: List<MenuItem>) {
         _listOfMenuItems.value = menuItems
+    }
+
+    // pass in id here
+    fun navigateToFragment(test: Int) {
+
     }
 
 }
