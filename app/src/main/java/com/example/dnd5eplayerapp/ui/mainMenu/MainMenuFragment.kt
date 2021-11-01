@@ -52,7 +52,7 @@ class MainMenuFragment() : Fragment() {
         return binding.root
     }
 
-    fun navigateToFragment() {
+    private fun navigateToFragment() {
         parentFragmentManager.commit {
             replace<HomeFragment>(R.id.nav_host_fragment)
             setReorderingAllowed(true)

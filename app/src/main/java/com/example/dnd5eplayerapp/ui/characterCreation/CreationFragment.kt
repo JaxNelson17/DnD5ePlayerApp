@@ -7,10 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.databinding.CreationFragmentBinding
+import com.example.dnd5eplayerapp.ui.abilityScores.AbilityScoresFragment
+import com.example.dnd5eplayerapp.ui.home.HomeFragment
 
 class CreationFragment() : Fragment() {
 
@@ -34,7 +38,19 @@ class CreationFragment() : Fragment() {
              textView.text = it
          })
 
+         binding.startButton.setOnClickListener {
+             navigateToFragment()
+         }
+
         return binding.root
+    }
+
+    private fun navigateToFragment() {
+        parentFragmentManager.commit {
+            replace<AbilityScoresFragment>(R.id.nav_host_fragment)
+            setReorderingAllowed(true)
+            addToBackStack(null)
+        }
     }
 
 }
