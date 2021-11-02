@@ -2,6 +2,7 @@ package com.example.dnd5eplayerapp.ui.mainMenu
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.database.MenuItem
 import com.example.dnd5eplayerapp.databinding.MainMenuItemBinding
+import com.example.dnd5eplayerapp.ui.home.HomeFragmentDirections
 
 class MainMenuAdapter(val viewModel: MainMenuViewModel) : ListAdapter <MenuItem, MainMenuAdapter.MenuViewHolder>(MenuListDiffCallback()) {
 
@@ -28,6 +30,11 @@ class MainMenuAdapter(val viewModel: MainMenuViewModel) : ListAdapter <MenuItem,
 
             binding.mainMenuItem.setOnClickListener {
                 viewModel.setMenuItem(item)
+            }
+
+            binding.mainMenuItem.setOnClickListener {
+                val action = HomeFragmentDirections.actionHomeFragmentToCreationFragment()
+                binding.mainMenuItem.findNavController().navigate(action)
             }
 
             var imageView = binding.iconView
