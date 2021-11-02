@@ -11,4 +11,8 @@ class CharactersRepository(private val characterDao: CharacterDao) {
     suspend fun addCharacter(character: Character) {
         characterDao.addCharacter(character)
     }
+
+    suspend fun updateCharacter(character: Character) {
+        characterDao.updateCharacter(character)
+    }
 }

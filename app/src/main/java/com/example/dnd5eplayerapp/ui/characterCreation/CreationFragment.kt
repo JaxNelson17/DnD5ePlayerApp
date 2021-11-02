@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.databinding.CreationFragmentBinding
 import com.example.dnd5eplayerapp.ui.abilityScores.AbilityScoresFragment
+import com.example.dnd5eplayerapp.ui.characterList.CharacterListFragment
 import com.example.dnd5eplayerapp.ui.home.HomeFragment
 
 class CreationFragment() : Fragment() {
@@ -47,7 +48,7 @@ class CreationFragment() : Fragment() {
 
     private fun navigateToFragment() {
         parentFragmentManager.commit {
-            replace<AbilityScoresFragment>(R.id.nav_host_fragment)
+            replace<CharacterListFragment>(R.id.nav_host_fragment)
             setReorderingAllowed(true)
             addToBackStack(null)
         }

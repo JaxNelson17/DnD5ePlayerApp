@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.database.Character
+import com.example.dnd5eplayerapp.ui.characterList.CharacterListFragment
 import kotlinx.android.synthetic.main.ab_scores_fragment.*
 import kotlinx.android.synthetic.main.ab_scores_fragment.view.*
 
@@ -22,12 +25,14 @@ class AbilityScoresFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflates the View
         val view = inflater.inflate(R.layout.ab_scores_fragment, container,false)
 
         viewModel = ViewModelProvider(this).get(AbiltyScoresViewModel::class.java)
 
         view.add_character_btn.setOnClickListener {
             insertDataToDatabase()
+            navigateToFragment()
         }
 
         return view
@@ -42,15 +47,27 @@ class AbilityScoresFragment : Fragment() {
         val char = charText.text
 
         if (inputCheck(str, dex, cons, intel, wis, char)) {
+            // Creates the Character Object
             val character = Character(0, Integer.parseInt(str.toString()), Integer.parseInt(dex.toString()), Integer.parseInt(cons.toString()), Integer.parseInt(intel.toString()), Integer.parseInt(wis.toString()), Integer.parseInt(char.toString()))
+            // Adds the Data to the Database
             viewModel.addCharacter(character)
             Toast.makeText(requireContext(), "Added in!!", Toast.LENGTH_LONG).show()
         } else {
+            // Makes sure that you filled up field
             Toast.makeText(requireContext(), "Didn't work", Toast.LENGTH_LONG).show()
         }
     }
 
+    // Function to make sure that the fields are empty or not
     private fun inputCheck(str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable): Boolean {
         return !(str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty())
+    }
+
+    private fun navigateToFragment() {
+        parentFragmentManager.commit {
+            replace<CharacterListFragment>(R.id.nav_host_fragment)
+            setReorderingAllowed(true)
+            addToBackStack(null)
+        }
     }
 }

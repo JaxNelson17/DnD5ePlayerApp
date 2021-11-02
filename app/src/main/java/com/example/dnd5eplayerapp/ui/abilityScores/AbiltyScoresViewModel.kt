@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class AbiltyScoresViewModel(application: Application): AndroidViewModel(application) {
 
-    private val readAllData: LiveData<List<Character>>
+    val readAllData: LiveData<List<Character>>
     private val repository: CharactersRepository
 
     init {
@@ -24,6 +24,12 @@ class AbiltyScoresViewModel(application: Application): AndroidViewModel(applicat
     fun addCharacter(character: Character) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addCharacter(character)
+        }
+    }
+
+    fun updateCharacter(character: Character) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateCharacter(character)
         }
     }
 }
