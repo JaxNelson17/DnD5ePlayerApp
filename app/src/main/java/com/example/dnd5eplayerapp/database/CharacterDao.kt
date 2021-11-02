@@ -12,12 +12,6 @@ interface CharacterDao {
     @Update
     suspend fun updateCharacter(character: Character)
 
-    @Delete
-    suspend fun deleteCharacter(character: Character)
-
-    @Query("DELETE FROM character_table")
-    suspend fun deleteAllCharacters()
-
     @Query("SELECT * FROM character_table ORDER BY id ASC")
     fun realAllData(): LiveData<List<Character>>
 }

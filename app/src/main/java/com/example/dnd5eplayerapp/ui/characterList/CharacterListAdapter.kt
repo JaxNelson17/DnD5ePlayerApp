@@ -6,14 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.fragment.app.ListFragment
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.database.Character
-import com.example.dnd5eplayerapp.ui.home.HomeFragmentDirections
 import kotlinx.android.synthetic.main.character_list_view_item.view.*
 
 class CharacterListAdapter: RecyclerView.Adapter<CharacterListAdapter.ListViewHolder>() {
@@ -39,9 +36,10 @@ class CharacterListAdapter: RecyclerView.Adapter<CharacterListAdapter.ListViewHo
         holder.itemView.charListText.text = currentItem.charisma.toString()
 
         holder.itemView.rowLayout.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(currentItem)
+            val action = CharacterListFragmentDirections.actionCharacterListFragmentToDetailFragment(currentItem)
             holder.itemView.findNavController().navigate(action)
         }
+
     }
 
     override fun getItemCount(): Int {
@@ -52,5 +50,7 @@ class CharacterListAdapter: RecyclerView.Adapter<CharacterListAdapter.ListViewHo
         this.characterList = character
         notifyDataSetChanged()
     }
+
+
 
 }
