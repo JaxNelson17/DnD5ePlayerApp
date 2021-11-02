@@ -15,4 +15,12 @@ class CharactersRepository(private val characterDao: CharacterDao) {
     suspend fun updateCharacter(character: Character) {
         characterDao.updateCharacter(character)
     }
+
+    suspend fun deleteCharacter(character: Character) {
+        characterDao.deleteCharacter(character)
+    }
+
+    suspend fun deleteAllCharacters() {
+        characterDao.deleteAllCharacters()
+    }
 }

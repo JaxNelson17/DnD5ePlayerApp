@@ -1,9 +1,9 @@
 package com.example.dnd5eplayerapp.ui.characterList
 
+import android.app.AlertDialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -43,18 +43,37 @@ class CharacterListFragment: Fragment() {
             adapter.setData(character)
         })
 
+
         view.floatingActionButton.setOnClickListener {
-            navigateToFragment()
+            findNavController().navigate(R.id.action_homeFragment_to_characterListFragment)
         }
+
+        setHasOptionsMenu(true)
 
         return view
     }
 
-    private fun navigateToFragment() {
-        parentFragmentManager.commit {
-            replace<AbilityScoresFragment>(R.id.nav_host_fragment)
-            setReorderingAllowed(true)
-            addToBackStack(null)
-        }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete) {
+            deleteAllUsers()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteAllUsers() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            viewModel.deleteAllCharacters()
+            Toast.makeText(requireContext(), "Deleted Everything", Toast.LENGTH_SHORT).show()
+        }
+        builder.setNegativeButton("No") { _, _ -> }
+        builder.setTitle("Delete everything?")
+        builder.setMessage("Are you sure you want to delete everything?")
+        builder.create().show()
+    }
+
 }
