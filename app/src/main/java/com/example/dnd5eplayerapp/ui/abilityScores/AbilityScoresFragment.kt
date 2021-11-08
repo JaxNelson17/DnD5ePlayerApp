@@ -2,19 +2,18 @@ package com.example.dnd5eplayerapp.ui.abilityScores
 
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.database.Character
-import com.example.dnd5eplayerapp.ui.characterList.CharacterListFragment
 import kotlinx.android.synthetic.main.ab_scores_fragment.*
+import kotlinx.android.synthetic.main.ab_scores_fragment.characterClass
 import kotlinx.android.synthetic.main.ab_scores_fragment.view.*
 
 class AbilityScoresFragment : Fragment() {
@@ -40,16 +39,19 @@ class AbilityScoresFragment : Fragment() {
     }
 
     private fun insertDataToDatabase() {
+        val name = characterNameText.text.toString()
+        val clas = characterClass.text.toString()
         val str = strText.text
         val dex= dexText.text
         val cons = consText.text
         val intel = intelText.text
         val wis = wisText.text
         val char = charText.text
+        val lvl = levelText.text
 
-        if (inputCheck(str, dex, cons, intel, wis, char)) {
+        if (inputCheck(name, clas, str, dex, cons, intel, wis, char, lvl)) {
             // Creates the Character Object
-            val character = Character(0, Integer.parseInt(str.toString()), Integer.parseInt(dex.toString()), Integer.parseInt(cons.toString()), Integer.parseInt(intel.toString()), Integer.parseInt(wis.toString()), Integer.parseInt(char.toString()))
+            val character = Character(0, name, clas, Integer.parseInt(str.toString()), Integer.parseInt(dex.toString()), Integer.parseInt(cons.toString()), Integer.parseInt(intel.toString()), Integer.parseInt(wis.toString()), Integer.parseInt(char.toString()), Integer.parseInt(lvl.toString()))
             // Adds the Data to the Database
             viewModel.addCharacter(character)
             Toast.makeText(requireContext(), "Added in!!", Toast.LENGTH_LONG).show()
@@ -60,7 +62,7 @@ class AbilityScoresFragment : Fragment() {
     }
 
     // Function to make sure that the fields are empty or not
-    private fun inputCheck(str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable): Boolean {
-        return !(str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty())
+    private fun inputCheck(name: String, clas: String, str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable, lvl: Editable): Boolean {
+        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(clas) && str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty() && lvl.isEmpty())
     }
 }

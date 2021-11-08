@@ -14,87 +14,244 @@
         android:id="@+id/rowLayout">
 
         <EditText
-            android:id="@+id/strUpdate"
-            android:layout_width="wrap_content"
+            android:id="@+id/nameUpdate"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_corner_3"
             android:ems="10"
-            android:inputType="number"
-            android:hint="Strength"
+            android:hint="Character Name"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/classUpdate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+        <EditText
+            android:id="@+id/classUpdate"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="110dp"
+            android:background="@drawable/rounded_corner_3"
+            android:ems="10"
+            android:hint="Class"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameUpdate" />
+
+
+        <EditText
+            android:id="@+id/lvlUpdate"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/rounded_corner_3"
+            android:ems="10"
+            android:hint="Level"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameUpdate" />
+
+        <EditText
+            android:id="@+id/strUpdate"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="90dp"
+            android:ems="10"
+            android:hint="Strength"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lvlUpdate" />
+
         <EditText
             android:id="@+id/dexUpdate"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="90dp"
             android:ems="10"
-            android:inputType="number"
             android:hint="Dexterity"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strUpdate" />
+            app:layout_constraintTop_toBottomOf="@+id/strUpdate" />
 
         <EditText
             android:id="@+id/consUpdate"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="90dp"
             android:ems="10"
-            android:inputType="number"
             android:hint="Constitution"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dexUpdate" />
+            app:layout_constraintTop_toBottomOf="@+id/dexUpdate" />
 
         <EditText
             android:id="@+id/intelUpdate"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="90dp"
             android:ems="10"
-            android:inputType="number"
             android:hint="Intelligence"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/consUpdate" />
+            app:layout_constraintTop_toBottomOf="@+id/consUpdate" />
 
         <EditText
             android:id="@+id/wisUpdate"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="90dp"
             android:ems="10"
-            android:inputType="number"
             android:hint="Wisdom"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/intelUpdate" />
+            app:layout_constraintTop_toBottomOf="@+id/intelUpdate" />
 
         <EditText
             android:id="@+id/charUpdate"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="90dp"
             android:ems="10"
-            android:inputType="number"
+            android:textAlignment="center"
             android:hint="Charisma"
+            android:textColor="@color/myWhite"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/wisUpdate" />
+            app:layout_constraintTop_toBottomOf="@+id/wisUpdate" />
 
         <Button
             android:id="@+id/update_character_btn"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Update"
+            android:background="@drawable/rounded_corner_2"
+            android:text="update character"
+            android:textColor="@color/myWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/charUpdate" />
+            app:layout_constraintTop_toBottomOf="@+id/charisma" />
+
+        <TextView
+            android:id="@+id/str"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginBottom="36dp"
+            android:text="STR"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintBottom_toTopOf="@+id/dex"
+            app:layout_constraintEnd_toStartOf="@+id/strUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/classUpdate" />
+
+        <TextView
+            android:id="@+id/dex"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="37dp"
+            android:text="DEX"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintBottom_toTopOf="@+id/cons"
+            app:layout_constraintEnd_toStartOf="@+id/dexUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/str" />
+
+        <TextView
+            android:id="@+id/cons"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="37dp"
+            android:text="CONS"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintBottom_toTopOf="@+id/intel"
+            app:layout_constraintEnd_toStartOf="@+id/consUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dex" />
+
+        <TextView
+            android:id="@+id/intel"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="36dp"
+            android:text="INT"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintBottom_toTopOf="@+id/wis"
+            app:layout_constraintEnd_toStartOf="@+id/intelUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cons" />
+
+        <TextView
+            android:id="@+id/wis"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="36dp"
+            android:text="WIS"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintBottom_toTopOf="@+id/charisma"
+            app:layout_constraintEnd_toStartOf="@+id/wisUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/intel" />
+
+        <TextView
+            android:id="@+id/charisma"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="36dp"
+            android:text="CHAR"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintEnd_toStartOf="@+id/charUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wis" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

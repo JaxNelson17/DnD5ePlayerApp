@@ -3,19 +3,16 @@ package com.example.dnd5eplayerapp.ui.characterDetail
 import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.database.Character
 import com.example.dnd5eplayerapp.ui.abilityScores.AbiltyScoresViewModel
-import com.example.dnd5eplayerapp.ui.characterList.CharacterListFragment
-import kotlinx.android.synthetic.main.ab_scores_fragment.*
 import kotlinx.android.synthetic.main.character_detail_fragment.*
 import kotlinx.android.synthetic.main.character_detail_fragment.view.*
 
@@ -53,16 +50,19 @@ class DetailFragment : Fragment() {
     }
 
     private fun updateCharacter() {
+        val name = nameUpdate.text.toString()
+        val clas = classUpdate.text.toString()
         val str = Integer.parseInt(strUpdate.text.toString())
         val dex= Integer.parseInt(dexUpdate.text.toString())
         val cons = Integer.parseInt(consUpdate.text.toString())
         val intel = Integer.parseInt(intelUpdate.text.toString())
         val wis = Integer.parseInt(wisUpdate.text.toString())
         val char = Integer.parseInt(charUpdate.text.toString())
+        val lvl = Integer.parseInt(charUpdate.text.toString())
 
-        if (inputCheck(strUpdate.text, dexUpdate.text, consUpdate.text, intelUpdate.text, wisUpdate.text, charUpdate.text)) {
+        if (inputCheck(nameUpdate.text, classUpdate.text, strUpdate.text, dexUpdate.text, consUpdate.text, intelUpdate.text, wisUpdate.text, charUpdate.text, lvlUpdate.text)) {
             // Create User Object
-            val updatedCharacter = Character(args.currentCharacter.id, str, dex, cons, intel, wis, char)
+            val updatedCharacter = Character(args.currentCharacter.id, name, clas, str, dex, cons, intel, wis, char, lvl)
             // Update Current Character
             viewModel.updateCharacter(updatedCharacter)
             Toast.makeText(requireContext(), "Successfully Updated!", Toast.LENGTH_SHORT).show()
@@ -73,8 +73,8 @@ class DetailFragment : Fragment() {
         }
     }
 
-    private fun inputCheck(str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable): Boolean {
-        return !(str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty())
+    private fun inputCheck(name: Editable, clas: Editable, str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable, lvl: Editable): Boolean {
+        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(clas) && str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty() && lvl.isEmpty())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -98,8 +98,8 @@ class DetailFragment : Fragment() {
 
         }
         builder.setNegativeButton("No") { _, _ -> }
-        builder.setTitle("Delete ${args.currentCharacter.strength}?")
-        builder.setMessage("Are you sure you want to delete ${args.currentCharacter.strength}?")
+        builder.setTitle("Delete ${args.currentCharacter.characterName}?")
+        builder.setMessage("Are you sure you want to delete ${args.currentCharacter.characterName}?")
         builder.create().show()
     }
 
