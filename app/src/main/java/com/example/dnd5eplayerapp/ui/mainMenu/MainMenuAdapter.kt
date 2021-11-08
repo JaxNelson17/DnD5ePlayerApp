@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.database.MenuItem
 import com.example.dnd5eplayerapp.databinding.MainMenuItemBinding
-import com.example.dnd5eplayerapp.ui.home.HomeFragmentDirections
 
 class MainMenuAdapter(val viewModel: MainMenuViewModel) : ListAdapter <MenuItem, MainMenuAdapter.MenuViewHolder>(MenuListDiffCallback()) {
 
@@ -33,7 +32,7 @@ class MainMenuAdapter(val viewModel: MainMenuViewModel) : ListAdapter <MenuItem,
             }
 
             binding.mainMenuItem.setOnClickListener {
-                val action = HomeFragmentDirections.actionHomeFragmentToCreationFragment()
+                val action = MainMenuFragmentDirections.actionMainMenuFragmentToCharacterListFragment()
                 binding.mainMenuItem.findNavController().navigate(action)
             }
 

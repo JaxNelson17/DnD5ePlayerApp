@@ -11,6 +11,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.databinding.CreationFragmentBinding
 import com.example.dnd5eplayerapp.ui.abilityScores.AbilityScoresFragment
@@ -22,7 +23,7 @@ class CreationFragment() : Fragment() {
     private lateinit var viewModel: CreationViewModel
     private lateinit var binding: CreationFragmentBinding
 
-     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.creation_fragment, container, false)
@@ -34,24 +35,15 @@ class CreationFragment() : Fragment() {
 
         binding.creationViewModel = viewModel
 
-         val textView: TextView = binding.mainTextView
-         viewModel.text.observe(viewLifecycleOwner, Observer {
-             textView.text = it
-         })
+        val textView: TextView = binding.mainTextView
+        viewModel.text.observe(viewLifecycleOwner, Observer {
+            textView.text = it
+        })
 
-         binding.startButton.setOnClickListener {
-             navigateToFragment()
-         }
+        binding.startButton.setOnClickListener {
+            findNavController().navigate(R.id.abilityScoresFragment)
+        }
 
         return binding.root
     }
-
-    private fun navigateToFragment() {
-        parentFragmentManager.commit {
-            replace<CharacterListFragment>(R.id.nav_host_fragment)
-            setReorderingAllowed(true)
-            addToBackStack(null)
-        }
-    }
-
 }

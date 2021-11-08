@@ -3,49 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/homeFragment">
-
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.dnd5eplayerapp.ui.home.HomeFragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_characterListFragment"
-            app:destination="@id/characterListFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_creationFragment"
-            app:destination="@id/creationFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_abilityScoresFragment"
-            app:destination="@id/abilityScoresFragment" />
-    </fragment>
+    app:startDestination="@id/mainMenuFragment">
     <fragment
         android:id="@+id/mainMenuFragment"
         android:name="com.example.dnd5eplayerapp.ui.mainMenu.MainMenuFragment"
         android:label="MainMenuFragment" >
         <action
-            android:id="@+id/action_mainMenuFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/creationFragment"
-        android:name="com.example.dnd5eplayerapp.ui.characterCreation.CreationFragment"
-        android:label="CreationFragment" >
+            android:id="@+id/action_mainMenuFragment_to_characterListFragment"
+            app:destination="@id/characterListFragment" />
         <action
-            android:id="@+id/action_creationFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_mainMenuFragment_to_creationFragment"
+            app:destination="@id/creationFragment" />
     </fragment>
     <fragment
         android:id="@+id/abilityScoresFragment"
         android:name="com.example.dnd5eplayerapp.ui.abilityScores.AbilityScoresFragment"
-        android:label="AbilityScoresFragment" >
-        <action
-            android:id="@+id/action_abilityScoresFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        android:label="AbilityScoresFragment" />
     <fragment
         android:id="@+id/characterListFragment"
         android:name="com.example.dnd5eplayerapp.ui.characterList.CharacterListFragment"
@@ -53,9 +26,14 @@
         <action
             android:id="@+id/action_characterListFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creationFragment"
+        android:name="com.example.dnd5eplayerapp.ui.characterCreation.CreationFragment"
+        android:label="CreationFragment" >
         <action
-            android:id="@+id/action_characterListFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_creationFragment_to_abilityScoresFragment"
+            app:destination="@id/abilityScoresFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -67,8 +45,5 @@
         <argument
             android:name="currentCharacter"
             app:argType="com.example.dnd5eplayerapp.database.Character" />
-        <action
-            android:id="@+id/action_detailFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

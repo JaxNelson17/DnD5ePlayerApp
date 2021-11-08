@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.database.Character
 import com.example.dnd5eplayerapp.ui.characterList.CharacterListFragment
@@ -32,7 +33,7 @@ class AbilityScoresFragment : Fragment() {
 
         view.add_character_btn.setOnClickListener {
             insertDataToDatabase()
-            navigateToFragment()
+            findNavController().navigate(R.id.characterListFragment)
         }
 
         return view
@@ -61,13 +62,5 @@ class AbilityScoresFragment : Fragment() {
     // Function to make sure that the fields are empty or not
     private fun inputCheck(str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable): Boolean {
         return !(str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty())
-    }
-
-    private fun navigateToFragment() {
-        parentFragmentManager.commit {
-            replace<CharacterListFragment>(R.id.nav_host_fragment)
-            setReorderingAllowed(true)
-            addToBackStack(null)
-        }
     }
 }

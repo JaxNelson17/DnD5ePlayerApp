@@ -43,12 +43,13 @@ class CharacterListFragment: Fragment() {
             adapter.setData(character)
         })
 
-
         view.floatingActionButton.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_characterListFragment)
+            findNavController().navigate(R.id.abilityScoresFragment)
         }
 
-        setHasOptionsMenu(true)
+        view.floatingActionButton2.setOnClickListener {
+            findNavController().navigate(R.id.mainMenuFragment)
+        }
 
         return view
     }
@@ -75,5 +76,4 @@ class CharacterListFragment: Fragment() {
         builder.setMessage("Are you sure you want to delete everything?")
         builder.create().show()
     }
-
 }

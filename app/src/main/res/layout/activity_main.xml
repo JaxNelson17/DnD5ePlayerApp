@@ -18,22 +18,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:navGraph="@navigation/navgraph" />
-
-        <com.ismaeldivita.chipnavigation.ChipNavigationBar
-            android:id="@+id/bottom_nav_bar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
-            android:background="@android:color/transparent"
-            app:cnb_unselectedColor="@color/myWhite"
-            android:fadingEdge="horizontal"
-            app:cnb_menuResource="@menu/bottom_nav_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="-48dp"
-            app:navGraph="@navigation/navgraph"/>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

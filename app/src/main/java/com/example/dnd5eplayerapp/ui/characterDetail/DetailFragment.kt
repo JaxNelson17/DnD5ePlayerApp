@@ -67,7 +67,7 @@ class DetailFragment : Fragment() {
             viewModel.updateCharacter(updatedCharacter)
             Toast.makeText(requireContext(), "Successfully Updated!", Toast.LENGTH_SHORT).show()
             // Navigate back
-            findNavController().navigate(R.id.action_homeFragment_to_characterListFragment)
+            findNavController().navigate(R.id.characterListFragment)
         } else {
             Toast.makeText(requireContext(), "Didn't update, fill out all fields", Toast.LENGTH_SHORT).show()
         }
@@ -94,7 +94,7 @@ class DetailFragment : Fragment() {
         builder.setPositiveButton("Yes") { _, _ ->
             viewModel.deleteCharacter(args.currentCharacter)
             Toast.makeText(requireContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_homeFragment_to_characterListFragment)
+            findNavController().navigate(R.id.characterListFragment)
 
         }
         builder.setNegativeButton("No") { _, _ -> }

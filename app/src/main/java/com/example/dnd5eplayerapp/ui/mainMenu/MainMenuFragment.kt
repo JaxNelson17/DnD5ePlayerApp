@@ -10,12 +10,10 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.databinding.MainMenuFragmentBinding
-import com.example.dnd5eplayerapp.ui.home.HomeFragment
+import com.example.dnd5eplayerapp.ui.characterCreation.CreationFragment
 
 class MainMenuFragment() : Fragment() {
 
@@ -24,9 +22,6 @@ class MainMenuFragment() : Fragment() {
     private val adapter by lazy { MainMenuAdapter(viewModel) }
 
     val itemList = MainMenuItems.listOfItems
-
-    val action =
-        MainMenuFragmentDirections.actionMainMenuFragmentToHomeFragment()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -42,8 +37,12 @@ class MainMenuFragment() : Fragment() {
         binding.mainMenuViewModel = viewModel
 
         viewModel.menuItemsList.observe(viewLifecycleOwner, Observer { item ->
-            navigateToFragment()
+            findNavController().navigate(R.id.characterListFragment)
         })
+
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.creationFragment)
+        }
 
         binding.mainMenuView.adapter = adapter
 
@@ -51,13 +50,4 @@ class MainMenuFragment() : Fragment() {
 
         return binding.root
     }
-
-    private fun navigateToFragment() {
-        parentFragmentManager.commit {
-            replace<HomeFragment>(R.id.nav_host_fragment)
-            setReorderingAllowed(true)
-            addToBackStack(null)
-        }
-    }
-
 }
