@@ -35,7 +35,7 @@ class MainMenuAdapter(val viewModel: MainMenuViewModel) : ListAdapter <MenuItem,
                 if (position == 1) {
                     binding.mainMenuItem.findNavController().navigate(R.id.characterListFragment)
                 } else {
-                    binding.mainMenuItem.findNavController().navigate(R.id.abilityScoresFragment)
+                    binding.mainMenuItem.findNavController().navigate(R.id.creationFragment)
                 }
             }
 
