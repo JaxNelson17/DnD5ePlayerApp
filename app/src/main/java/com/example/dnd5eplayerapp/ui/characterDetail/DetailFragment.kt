@@ -31,12 +31,16 @@ class DetailFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(AbiltyScoresViewModel::class.java)
 
+        view.nameUpdate.setText(args.currentCharacter.characterName)
+        view.classUpdate.setText(args.currentCharacter.characterClass)
         view.strUpdate.setText(args.currentCharacter.strength.toString())
         view.dexUpdate.setText(args.currentCharacter.dexterity.toString())
         view.consUpdate.setText(args.currentCharacter.constitution.toString())
         view.intelUpdate.setText(args.currentCharacter.intelligence.toString())
         view.wisUpdate.setText(args.currentCharacter.wisdom.toString())
         view.charUpdate.setText(args.currentCharacter.charisma.toString())
+        view.lvlUpdate.setText(args.currentCharacter.level.toString())
+
 
         view.update_character_btn.setOnClickListener {
             updateCharacter()
@@ -51,18 +55,18 @@ class DetailFragment : Fragment() {
 
     private fun updateCharacter() {
         val name = nameUpdate.text.toString()
-        val clas = classUpdate.text.toString()
+        val _class = classUpdate.text.toString()
         val str = Integer.parseInt(strUpdate.text.toString())
         val dex= Integer.parseInt(dexUpdate.text.toString())
         val cons = Integer.parseInt(consUpdate.text.toString())
         val intel = Integer.parseInt(intelUpdate.text.toString())
         val wis = Integer.parseInt(wisUpdate.text.toString())
         val char = Integer.parseInt(charUpdate.text.toString())
-        val lvl = Integer.parseInt(charUpdate.text.toString())
+        val lvl = Integer.parseInt(lvlUpdate.text.toString())
 
         if (inputCheck(nameUpdate.text, classUpdate.text, strUpdate.text, dexUpdate.text, consUpdate.text, intelUpdate.text, wisUpdate.text, charUpdate.text, lvlUpdate.text)) {
             // Create User Object
-            val updatedCharacter = Character(args.currentCharacter.id, name, clas, str, dex, cons, intel, wis, char, lvl)
+            val updatedCharacter = Character(args.currentCharacter.id, name, _class, str, dex, cons, intel, wis, char, lvl)
             // Update Current Character
             viewModel.updateCharacter(updatedCharacter)
             Toast.makeText(requireContext(), "Successfully Updated!", Toast.LENGTH_SHORT).show()
@@ -73,8 +77,8 @@ class DetailFragment : Fragment() {
         }
     }
 
-    private fun inputCheck(name: Editable, clas: Editable, str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable, lvl: Editable): Boolean {
-        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(clas) && str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty() && lvl.isEmpty())
+    private fun inputCheck(name: Editable, type: Editable, str: Editable, dex: Editable, cons: Editable, intel: Editable, wis: Editable, char: Editable, lvl: Editable): Boolean {
+        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(type) && str.isEmpty() && dex.isEmpty() && cons.isEmpty() && intel.isEmpty() && wis.isEmpty() && char.isEmpty() && lvl.isEmpty())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

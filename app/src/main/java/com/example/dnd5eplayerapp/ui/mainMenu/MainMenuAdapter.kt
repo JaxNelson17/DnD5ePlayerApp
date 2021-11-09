@@ -32,8 +32,11 @@ class MainMenuAdapter(val viewModel: MainMenuViewModel) : ListAdapter <MenuItem,
             }
 
             binding.mainMenuItem.setOnClickListener {
-                val action = MainMenuFragmentDirections.actionMainMenuFragmentToCharacterListFragment()
-                binding.mainMenuItem.findNavController().navigate(action)
+                if (position == 1) {
+                    binding.mainMenuItem.findNavController().navigate(R.id.characterListFragment)
+                } else {
+                    binding.mainMenuItem.findNavController().navigate(R.id.abilityScoresFragment)
+                }
             }
 
             var imageView = binding.iconView

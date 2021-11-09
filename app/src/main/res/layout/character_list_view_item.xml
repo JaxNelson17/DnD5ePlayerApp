@@ -53,6 +53,7 @@
                 android:id="@+id/characterClass"
                 android:layout_width="125dp"
                 android:layout_height="30dp"
+                android:layout_marginEnd="20dp"
                 android:text="Class"
                 android:textColor="@color/myWhite"
                 android:textSize="15dp"

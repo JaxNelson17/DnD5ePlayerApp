@@ -40,7 +40,7 @@ class AbilityScoresFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val name = characterNameText.text.toString()
-        val clas = characterClass.text.toString()
+        val _class = characterClass.text.toString()
         val str = strText.text
         val dex= dexText.text
         val cons = consText.text
@@ -49,9 +49,9 @@ class AbilityScoresFragment : Fragment() {
         val char = charText.text
         val lvl = levelText.text
 
-        if (inputCheck(name, clas, str, dex, cons, intel, wis, char, lvl)) {
+        if (inputCheck(name, _class, str, dex, cons, intel, wis, char, lvl)) {
             // Creates the Character Object
-            val character = Character(0, name, clas, Integer.parseInt(str.toString()), Integer.parseInt(dex.toString()), Integer.parseInt(cons.toString()), Integer.parseInt(intel.toString()), Integer.parseInt(wis.toString()), Integer.parseInt(char.toString()), Integer.parseInt(lvl.toString()))
+            val character = Character(0, name, _class, Integer.parseInt(str.toString()), Integer.parseInt(dex.toString()), Integer.parseInt(cons.toString()), Integer.parseInt(intel.toString()), Integer.parseInt(wis.toString()), Integer.parseInt(char.toString()), Integer.parseInt(lvl.toString()))
             // Adds the Data to the Database
             viewModel.addCharacter(character)
             Toast.makeText(requireContext(), "Added in!!", Toast.LENGTH_LONG).show()
