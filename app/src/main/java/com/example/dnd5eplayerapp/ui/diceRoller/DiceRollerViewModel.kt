@@ -1,4 +1,7 @@
 package com.example.dnd5eplayerapp.ui.diceRoller
 
-class DiceRollerViewModel {
+import android.app.Application
+import androidx.lifecycle.ViewModel
+
+class DiceRollerViewModel(application: Application) : ViewModel() {
 }
