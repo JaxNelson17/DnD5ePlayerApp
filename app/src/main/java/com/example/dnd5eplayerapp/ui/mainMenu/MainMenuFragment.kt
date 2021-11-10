@@ -46,7 +46,7 @@ class MainMenuFragment() : Fragment() {
         }
 
         binding.floatingActionButton2.setOnClickListener {
-            Toast.makeText(requireContext(), "Coming Soon", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.diceRollerFragment)
         }
 
         binding.mainMenuView.adapter = adapter

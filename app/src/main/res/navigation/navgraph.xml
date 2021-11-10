@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_creationFragment"
             app:destination="@id/creationFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_diceRollerFragment"
+            app:destination="@id/diceRollerFragment" />
     </fragment>
     <fragment
         android:id="@+id/abilityScoresFragment"
@@ -45,5 +48,13 @@
         <argument
             android:name="currentCharacter"
             app:argType="com.example.dnd5eplayerapp.database.Character" />
+    </fragment>
+    <fragment
+        android:id="@+id/diceRollerFragment"
+        android:name="com.example.dnd5eplayerapp.ui.diceRoller.DiceRollerFragment"
+        android:label="DiceRollerFragment" >
+        <action
+            android:id="@+id/action_diceRollerFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
 </navigation>
