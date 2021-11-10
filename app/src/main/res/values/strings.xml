@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DnD5ePlayerApp</string>
+    <string name="version">v1.0.0</string>
+    <string name="created">Created by: Jaxson Nelson</string>
 </resources>

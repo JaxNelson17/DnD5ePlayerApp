@@ -42,7 +42,7 @@ class MainMenuFragment() : Fragment() {
         })
 
         binding.floatingActionButton.setOnClickListener {
-            findNavController().navigate(R.id.creationFragment)
+            findNavController().navigate(R.id.infoFragment)
         }
 
         binding.floatingActionButton2.setOnClickListener {
