@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -32,31 +33,45 @@ class DiceRollerFragment : Fragment() {
         binding.diceRollerViewModel = viewModel
 
         binding.d20Roll.setOnClickListener {
-            binding.d20Result.text = viewModel.rollD20().toString()
+            val total = viewModel.rollD20().toString()
+            binding.d20Result.text = total
+            Toast.makeText(requireContext(), "Your roll was $total", Toast.LENGTH_SHORT).show()
         }
 
         binding.d12Roll.setOnClickListener {
-            binding.d12Result.text = viewModel.rollD12().toString()
+            val total = viewModel.rollD12().toString()
+            binding.d12Result.text = total
+            Toast.makeText(requireContext(), "Your roll was $total", Toast.LENGTH_SHORT).show()
         }
 
         binding.d10Roll.setOnClickListener {
-            binding.d10Result.text = viewModel.rollD10().toString()
+            val total = viewModel.rollD10().toString()
+            binding.d10Result.text = total
+            Toast.makeText(requireContext(), "Your roll was $total", Toast.LENGTH_SHORT).show()
         }
 
         binding.d10Roll2.setOnClickListener {
-            binding.d10Result2.text = viewModel.rollD10Two().toString()
+            val total = viewModel.rollD10Two().toString()
+            binding.d10Result2.text = total
+            Toast.makeText(requireContext(), "Your roll was $total", Toast.LENGTH_SHORT).show()
         }
 
         binding.d8Roll.setOnClickListener {
-            binding.d8Result.text = viewModel.rollD8().toString()
+            val total = viewModel.rollD8().toString()
+            binding.d8Result.text = total
+            Toast.makeText(requireContext(), "Your roll was $total", Toast.LENGTH_SHORT).show()
         }
 
         binding.d6Roll.setOnClickListener {
-            binding.d6Result.text = viewModel.rollD6().toString()
+            val total = viewModel.rollD6().toString()
+            binding.d6Result.text =  total
+            Toast.makeText(requireContext(), "Your roll was $total", Toast.LENGTH_SHORT).show()
         }
 
         binding.d4Roll.setOnClickListener {
-            binding.d4Result.text = viewModel.rollD4().toString()
+            val total = viewModel.rollD4().toString()
+            binding.d4Result.text = total
+            Toast.makeText(requireContext(), "Your roll was $total", Toast.LENGTH_SHORT).show()
         }
 
         binding.navBack.setOnClickListener {
