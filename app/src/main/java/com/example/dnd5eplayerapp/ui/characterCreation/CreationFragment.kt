@@ -39,6 +39,10 @@ class CreationFragment() : Fragment() {
             findNavController().navigate(R.id.abilityScoresFragment)
         }
 
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.mainMenuFragment)
+        }
+
         return binding.root
     }
 }
