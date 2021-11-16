@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.dnd5eplayerapp.database.Action
 import com.example.dnd5eplayerapp.database.ApiItem
 import com.example.dnd5eplayerapp.database.MonsterInfo
 import com.example.dnd5eplayerapp.repository.Repository
@@ -22,9 +21,6 @@ class HomeViewModel(private val repository: Repository): ViewModel() {
     val myCustomMonster: LiveData<retrofit2.Response<MonsterInfo>>
         get() = _myCustomMonster
 
-    private val _myCustomMonster2 = MutableLiveData<retrofit2.Response<Action>>()
-    val myCustomMonster2: LiveData<retrofit2.Response<Action>>
-        get() = _myCustomMonster2
 
     private val _customActions = MutableLiveData<List<MonsterInfo>>()
     val customActions: LiveData<List<MonsterInfo>>
@@ -51,7 +47,5 @@ class HomeViewModel(private val repository: Repository): ViewModel() {
             _myCustomMonster.value = response
         }
 
-
     }
-
 }

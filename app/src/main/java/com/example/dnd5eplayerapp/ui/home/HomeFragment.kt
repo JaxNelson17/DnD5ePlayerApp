@@ -1,8 +1,6 @@
 package com.example.dnd5eplayerapp.ui.home
 
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,10 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.dnd5eplayerapp.R
 import com.example.dnd5eplayerapp.databinding.HomeFragmentBinding
 import com.example.dnd5eplayerapp.repository.Repository
-import kotlinx.android.synthetic.main.creation_fragment.*
 import kotlinx.android.synthetic.main.home_fragment.*
-import kotlinx.android.synthetic.main.home_recyclerview_item.*
-import kotlinx.coroutines.CoroutineScope
 
 class HomeFragment() : Fragment()  {
 
@@ -38,6 +33,7 @@ class HomeFragment() : Fragment()  {
         val viewModelFactory = HomeViewModelFactory(repository)
 
         homeViewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
+
 
         homeViewModel.getCustomData("")
         binding.random.setOnClickListener {
@@ -61,10 +57,9 @@ class HomeFragment() : Fragment()  {
                     monsArmor.text = response.body()?.armorClass.toString()
                     monsHit.text = response.body()?.hitPoints.toString()
                     monsHitDice.text = response.body()?.hitDice.toString()
-                    action.text = response.body()?.actions.toString()
-                    action.movementMethod = ScrollingMovementMethod()
+
                 } else {
-                    Log.i("Monster", "Your monster is blank")
+                    Toast.makeText(requireContext(), "Your Monster is blank", Toast.LENGTH_SHORT).show()
                 }
             })
         }

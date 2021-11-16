@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dnd5eplayerapp.database.ApiItem
 import com.example.dnd5eplayerapp.database.MonsterInfo
 import com.example.dnd5eplayerapp.databinding.HomeRecyclerviewItemBinding
 
@@ -27,9 +26,8 @@ class HomeAdapter (
         fun bind(position: Int) {
             val item = getItem(position)
 
-            val action = binding.actionText
+            var action = binding.actionText
 
-            action.text = item.actions.toString()
 
         }
     }
@@ -41,7 +39,7 @@ class HomeListDiffCallback : DiffUtil.ItemCallback<MonsterInfo>() {
     }
 
     override fun areContentsTheSame(oldItem: MonsterInfo, newItem: MonsterInfo): Boolean {
-        return oldItem.name == newItem.name
+        return oldItem == newItem
     }
 
 }
