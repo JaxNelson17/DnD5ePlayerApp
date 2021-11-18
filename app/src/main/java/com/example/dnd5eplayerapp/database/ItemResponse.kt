@@ -1,16 +1,15 @@
 package com.example.dnd5eplayerapp.database
 
 import android.os.Parcelable
-import android.widget.ImageView
 import kotlinx.android.parcel.Parcelize
 
 
 data class ItemResponse (
     val count: Long,
-    val results: List<Monster>
+    val results: List<ApiItem>
 )
 
-data class Monster (
+data class ApiItem (
     val index: String,
     val name: String,
     val url: String

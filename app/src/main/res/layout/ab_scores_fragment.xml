@@ -147,8 +147,10 @@
         android:textColor="@color/myWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charisma" />
+        app:layout_constraintTop_toBottomOf="@+id/charisma"
+        app:layout_constraintVertical_bias="0.706" />
 
     <TextView
         android:id="@+id/str"
@@ -245,6 +247,22 @@
         app:layout_constraintEnd_toStartOf="@+id/charText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wis" />
+
+    <TextView
+        android:id="@+id/require"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_corner_2"
+        android:text="@string/require"
+        android:textAlignment="center"
+        android:textColor="@color/myWhite"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_character_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

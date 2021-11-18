@@ -16,21 +16,306 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="100dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+
+        <EditText
+            android:id="@+id/monsterEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/rounded_corner_2"
+            android:ems="10"
+            android:hint="Monster"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:textColorHint="@color/myWhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/home_recyclerview_item"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/random"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner_2"
+            android:text="Find Monster"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monsterEditText" />
+
+        <TextView
+            android:id="@+id/help_text"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Please but dashes between the words"
+            android:textAlignment="center"
+            android:textColor="@color/myGold"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/random" />
+
+        <TextView
+            android:id="@+id/strPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="15dp"
+            android:text="Str"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monsSubType" />
+
+        <TextView
+            android:id="@+id/dexPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Dex"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintStart_toStartOf="@+id/strPlace"
+            app:layout_constraintTop_toBottomOf="@+id/strPlace" />
+
+        <TextView
+            android:id="@+id/consPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Cons"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintStart_toStartOf="@+id/dexPlace"
+            app:layout_constraintTop_toBottomOf="@+id/dexPlace" />
+
+        <TextView
+            android:id="@+id/intelPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Intel"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintStart_toStartOf="@+id/consPlace"
+            app:layout_constraintTop_toBottomOf="@+id/consPlace" />
+
+        <TextView
+            android:id="@+id/wisPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Wis"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintStart_toStartOf="@+id/charPlace"
+            app:layout_constraintTop_toBottomOf="@+id/charPlace" />
+
+        <TextView
+            android:id="@+id/charPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Char"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintStart_toStartOf="@+id/intelPlace"
+            app:layout_constraintTop_toBottomOf="@+id/intelPlace" />
+
+        <TextView
+            android:id="@+id/strMonster"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginEnd="145dp"
+            android:text="0"
+            android:textColor="@color/myWhite"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/strPlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/strPlace" />
+
+        <TextView
+            android:id="@+id/dexMonster"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="0"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/dexPlace"
+            app:layout_constraintEnd_toEndOf="@+id/strMonster"
+            app:layout_constraintTop_toTopOf="@+id/dexPlace" />
+
+        <TextView
+            android:id="@+id/consMonster"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="0"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/consPlace"
+            app:layout_constraintEnd_toEndOf="@+id/dexMonster"
+            app:layout_constraintTop_toTopOf="@+id/consPlace" />
+
+        <TextView
+            android:id="@+id/intelMonster"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="0"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/intelPlace"
+            app:layout_constraintEnd_toEndOf="@+id/consMonster"
+            app:layout_constraintTop_toTopOf="@+id/intelPlace" />
+
+        <TextView
+            android:id="@+id/wisMonster"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="0"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/wisPlace"
+            app:layout_constraintEnd_toEndOf="@+id/charMonster"
+            app:layout_constraintTop_toTopOf="@+id/wisPlace" />
+
+        <TextView
+            android:id="@+id/charMonster"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="0"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/charPlace"
+            app:layout_constraintEnd_toEndOf="@+id/intelMonster"
+            app:layout_constraintTop_toTopOf="@+id/charPlace" />
+
+        <TextView
+            android:id="@+id/monsName"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Name"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintEnd_toEndOf="@+id/help_text"
+            app:layout_constraintStart_toStartOf="@+id/help_text"
+            app:layout_constraintTop_toBottomOf="@+id/help_text" />
+
+        <TextView
+            android:id="@+id/monsType"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Type"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintEnd_toEndOf="@+id/monsName"
+            app:layout_constraintStart_toStartOf="@+id/monsName"
+            app:layout_constraintTop_toBottomOf="@+id/monsName" />
+
+        <TextView
+            android:id="@+id/monsSubType"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Sub-Type"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintEnd_toEndOf="@+id/monsType"
+            app:layout_constraintStart_toStartOf="@+id/monsType"
+            app:layout_constraintTop_toBottomOf="@+id/monsType" />
+
+        <TextView
+            android:id="@+id/armorClass"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="15dp"
+            android:text="AC"
+            android:textColor="@color/myWhite"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wisPlace" />
+
+        <TextView
+            android:id="@+id/monsArmor"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginEnd="145dp"
+            android:text="0"
+            android:textColor="@color/myWhite"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/armorClass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/armorClass" />
+
+        <TextView
+            android:id="@+id/hitPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:text="HP"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintStart_toStartOf="@+id/armorClass"
+            app:layout_constraintTop_toBottomOf="@+id/armorClass" />
+
+        <TextView
+            android:id="@+id/monsHit"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="0"
+            android:textSize="20dp"
+            android:textColor="@color/myWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/hitPoints"
+            app:layout_constraintEnd_toEndOf="@+id/monsArmor"
+            app:layout_constraintTop_toTopOf="@+id/hitPoints" />
+
+        <TextView
+            android:id="@+id/hitDice"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="15dp"
+            android:text="Hit Dice"
+            android:textColor="@color/myWhite"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hitPoints" />
+
+        <TextView
+            android:id="@+id/monsHitDice"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginEnd="140dp"
+            android:text="_d_"
+            android:textColor="@color/myWhite"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/hitDice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hitDice" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:backgroundTint="@color/myDarkBlue"
+            android:focusable="true"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/custom_home" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

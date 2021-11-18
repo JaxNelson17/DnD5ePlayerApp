@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DnD5ePlayerApp</string>
+    <string name="version">v1.0.0</string>
+    <string name="created">Created by: Jaxson Nelson</string>
+    <string name="details">Remember to Have your d20 ready</string>
+    <string name="require">You need to fill out all fields or else it will not work</string>
+    <string name="shout">Shout out to my friend Tyce for giving me the idea for the app, and for giving me the answers to what all should be features</string>
 </resources>
