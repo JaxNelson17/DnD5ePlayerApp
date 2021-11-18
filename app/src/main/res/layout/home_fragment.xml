@@ -21,7 +21,6 @@
             android:id="@+id/monsterEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="25dp"
             android:background="@drawable/rounded_corner_2"
             android:ems="10"
@@ -53,10 +52,9 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_corner_2"
             android:text="Please but dashes between the words"
             android:textAlignment="center"
-            android:textColor="@color/myWhite"
+            android:textColor="@color/myGold"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,11 +64,12 @@
             android:id="@+id/strPlace"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginStart="115dp"
+            android:layout_marginStart="140dp"
             android:layout_marginTop="15dp"
             android:text="Str"
-            android:textSize="20dp"
+            android:textAlignment="center"
             android:textColor="@color/myWhite"
+            android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/monsSubType" />
 
@@ -133,10 +132,10 @@
             android:id="@+id/strMonster"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginEnd="140dp"
+            android:layout_marginEnd="145dp"
             android:text="0"
-            android:textSize="20dp"
             android:textColor="@color/myWhite"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/strPlace"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/strPlace" />
@@ -236,11 +235,11 @@
             android:id="@+id/armorClass"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginStart="115dp"
+            android:layout_marginStart="140dp"
             android:layout_marginTop="15dp"
             android:text="AC"
-            android:textSize="20dp"
             android:textColor="@color/myWhite"
+            android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/wisPlace" />
 
@@ -248,10 +247,10 @@
             android:id="@+id/monsArmor"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginEnd="140dp"
+            android:layout_marginEnd="145dp"
             android:text="0"
-            android:textSize="20dp"
             android:textColor="@color/myWhite"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/armorClass"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/armorClass" />
@@ -282,22 +281,24 @@
             android:id="@+id/hitDice"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
+            android:layout_marginStart="115dp"
             android:layout_marginTop="15dp"
             android:text="Hit Dice"
-            android:textSize="20dp"
             android:textColor="@color/myWhite"
-            app:layout_constraintStart_toStartOf="@+id/hitPoints"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hitPoints" />
 
         <TextView
             android:id="@+id/monsHitDice"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
+            android:layout_marginEnd="140dp"
             android:text="_d_"
-            android:textSize="20dp"
             android:textColor="@color/myWhite"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/hitDice"
-            app:layout_constraintEnd_toEndOf="@+id/monsHit"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/hitDice" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

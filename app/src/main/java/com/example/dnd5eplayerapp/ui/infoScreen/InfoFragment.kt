@@ -32,9 +32,6 @@ class InfoFragment : Fragment() {
             findNavController().navigate(R.id.mainMenuFragment)
         }
 
-        binding.floatingActionButton2.setOnClickListener {
-            findNavController().navigate(R.id.homeFragment)
-        }
 
         return binding.root
     }

@@ -49,6 +49,10 @@ class MainMenuFragment() : Fragment() {
             findNavController().navigate(R.id.diceRollerFragment)
         }
 
+        binding.floatingActionButton3.setOnClickListener {
+            findNavController().navigate(R.id.homeFragment)
+        }
+
         binding.mainMenuView.adapter = adapter
 
         adapter.submitList(itemList)
