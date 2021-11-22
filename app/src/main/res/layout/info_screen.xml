@@ -144,12 +144,14 @@
 
         <TextView
             android:id="@+id/shout_out"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="360dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="100dp"
             android:text="@string/shout"
-            android:textColor="@color/myWhite"
             android:textAlignment="center"
+            android:textColor="@color/myWhite"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

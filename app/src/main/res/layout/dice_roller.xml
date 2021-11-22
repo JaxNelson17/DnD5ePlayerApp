@@ -20,7 +20,7 @@
             android:layout_width="80dp"
             android:layout_height="75dp"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/custom_d20" />
@@ -264,15 +264,14 @@
         <Button
             android:id="@+id/navBack"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Back to Home"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_corner_2"
+            android:text="Back to Home"
             android:textAlignment="center"
             android:textColor="@color/myWhite"
-            app:layout_constraintEnd_toStartOf="@+id/d4_result"
-            app:layout_constraintHorizontal_bias="0.42"
-            app:layout_constraintStart_toEndOf="@+id/d4"
+            app:layout_constraintEnd_toEndOf="@+id/d4_roll"
+            app:layout_constraintStart_toStartOf="@+id/d4_roll"
             app:layout_constraintTop_toBottomOf="@+id/d4_roll" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
