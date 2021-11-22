@@ -37,7 +37,7 @@ class HomeFragment() : Fragment()  {
 
         homeViewModel.getCustomData("")
         binding.random.setOnClickListener {
-            val myMonster = monsterEditText.text.toString().toLowerCase()
+            val myMonster = monsterEditText.text.toString().replace(" ", "-").toLowerCase()
 
             homeViewModel.getMonsters(myMonster)
             homeViewModel.myCustomMonster.observe(viewLifecycleOwner, Observer { response ->

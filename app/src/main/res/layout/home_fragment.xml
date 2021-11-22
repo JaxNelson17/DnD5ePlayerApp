@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:background="@drawable/rounded_corner_2"
+            android:autofillHints="name"
             android:ems="10"
             android:hint="Monster"
             android:inputType="text"
@@ -36,7 +37,7 @@
         <Button
             android:id="@+id/random"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_corner_2"
             android:text="Find Monster"
@@ -46,19 +47,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/monsterEditText" />
-
-        <TextView
-            android:id="@+id/help_text"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginTop="10dp"
-            android:text="Please but dashes between the words"
-            android:textAlignment="center"
-            android:textColor="@color/myGold"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/random" />
 
         <TextView
             android:id="@+id/strPlace"
@@ -199,13 +187,13 @@
             android:id="@+id/monsName"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:text="Name"
-            android:textSize="20dp"
             android:textColor="@color/myWhite"
-            app:layout_constraintEnd_toEndOf="@+id/help_text"
-            app:layout_constraintStart_toStartOf="@+id/help_text"
-            app:layout_constraintTop_toBottomOf="@+id/help_text" />
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/random"
+            app:layout_constraintStart_toStartOf="@+id/random"
+            app:layout_constraintTop_toBottomOf="@+id/random" />
 
         <TextView
             android:id="@+id/monsType"
