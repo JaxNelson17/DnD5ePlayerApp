@@ -7,7 +7,6 @@
         android:allowBackup="true"
         android:icon="@drawable/d12"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DnD5ePlayerApp">
         <activity
